@@ -1,6 +1,5 @@
 <?php
-// Aquí luego podremos incluir conexión a la base de datos, sesiones, etc.
-// include 'conexion.php';
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -45,6 +44,16 @@
     </div>
     <div class="w3-col s3">
       <a href="#contacto" class="w3-button w3-block w3-black">CONTACTO</a>
+    </div>
+
+    <div class="w3-col s3">
+        <?php if (isset($_SESSION['usuario_id'])): ?>
+            <a href="logout.php" class="w3-button w3-block w3-black">
+        CERRAR SESIÓN (<?php echo $_SESSION['usuario_nombre']; ?>)
+            </a>
+        <?php else: ?>
+            <a href="login.php" class="w3-button w3-block w3-black">LOGIN</a>
+        <?php endif; ?>
     </div>
   </div>
 </div>
@@ -131,7 +140,7 @@
 
 </div>
 
-<!-- Footer -->
+
 <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
   <p>Tienda de Bicicletas - Proyecto Programación para Internet</p>
 </footer>
