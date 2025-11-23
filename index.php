@@ -1,7 +1,11 @@
+<?php
+// Aquí luego podremos incluir conexión a la base de datos, sesiones, etc.
+// include 'conexion.php';
+?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>BICICLETONES</title>
+  <title>Tienda de Bicicletas</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
@@ -15,6 +19,7 @@
     .bgimg {
       background-position: center;
       background-size: cover;
+      /* Luego cambias esta imagen por una de bicis tuya */
       background-image: url("https://www.w3schools.com/w3images/bike.jpg");
       min-height: 75%;
     }
@@ -26,6 +31,7 @@
 </head>
 <body>
 
+<!-- Barra de navegación -->
 <div class="w3-top">
   <div class="w3-row w3-padding w3-black">
     <div class="w3-col s3">
@@ -43,7 +49,7 @@
   </div>
 </div>
 
-
+<!-- Header con imagen -->
 <header class="bgimg w3-display-container w3-grayscale-min" id="home">
   <div class="w3-display-middle w3-center">
     <span class="w3-text-white" style="font-size:70px">Tienda<br>Bicicletas</span>
@@ -53,8 +59,10 @@
   </div>
 </header>
 
+<!-- Contenido principal -->
 <div class="w3-sand w3-grayscale w3-large">
 
+  <!-- Sección NOSOTROS -->
   <div class="w3-container" id="about">
     <div class="w3-content" style="max-width:700px">
       <h5 class="w3-center w3-padding-64">
@@ -65,6 +73,7 @@
     </div>
   </div>
 
+  <!-- Sección CATÁLOGO -->
   <div class="w3-container" id="catalogo">
     <div class="w3-content" style="max-width:700px">
       <h5 class="w3-center w3-padding-48">
@@ -104,17 +113,17 @@
     </div>
   </div>
 
-
+  <!-- Sección CONTACTO -->
   <div class="w3-container" id="contacto" style="padding-bottom:32px;">
     <div class="w3-content" style="max-width:700px">
       <h5 class="w3-center w3-padding-48">
         <span class="w3-tag w3-wide">CONTACTO</span>
       </h5>
       <p>Escríbenos para cotizaciones, dudas o pedidos especiales.</p>
-      <form>
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Nombre" required></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="email" placeholder="Correo electrónico" required></p>
-        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Mensaje" required></p>
+      <form method="post" action="#">
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" name="nombre" placeholder="Nombre" required></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="email" name="correo" placeholder="Correo electrónico" required></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" name="mensaje" placeholder="Mensaje" required></p>
         <p><button class="w3-button w3-black" type="submit">ENVIAR</button></p>
       </form>
     </div>
@@ -122,12 +131,13 @@
 
 </div>
 
+<!-- Footer -->
 <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
-  <p>Proyecto Programación para Internet</p>
+  <p>Tienda de Bicicletas - Proyecto Programación para Internet</p>
 </footer>
 
 <script>
-
+  // Tabs del catálogo
   function openMenu(evt, menuName) {
     var i, x, tablinks;
     x = document.getElementsByClassName("menu");
